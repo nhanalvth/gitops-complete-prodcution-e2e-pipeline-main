@@ -4,7 +4,7 @@ metadata:
   name: complete-prodcution-e2e-pipeline-service
 spec:
   selector:
-    app: complete-prodcution-e2e-pipeline
+    app: complete-prodcution-e2e-app
   ports:
     - protocol: TCP
       port: 80        # The port that the service will expose
