@@ -16,6 +16,9 @@ spec:
       - name: complete-prodcution-e2e-app
         image: minhnhan548/minhnhan548:1.0.0-20
         resources:
+          requests:
+            memory: "128Mi"   # Giảm yêu cầu bộ nhớ
+            cpu: "250m"       # Giảm yêu cầu CPU
           limits:
             memory: "256Mi"
             cpu: "500m"
