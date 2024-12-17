@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: complete-prodcution-e2e-pipeline
+  name: complete-prodcution-e2e-deployment
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: complete-prodcution-e2e-pipeline
+      app: complete-prodcution-e2e-app
   template:
     metadata:
       labels:
-        app: complete-prodcution-e2e-pipeline
+        app: complete-prodcution-e2e-app
     spec:
       containers:
-      - name: complete-prodcution-e2e-pipeline
-        image: fahad1206/e2e-cicd-pipline:1.0.0-11
+      - name: complete-prodcution-e2e-app
+        image: minhnhan548/minhnhan548:1.0.0-20
         resources:
           limits:
             memory: "256Mi"
