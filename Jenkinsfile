@@ -32,14 +32,15 @@ pipeline {
 
         stage ("Push the change deployment file to Git") {
             steps {
-                withCredentials([usernamePassword(credentialsId: 'github-token', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD')]) {
-                    sh """
-                        git config --global user.name "nhanalvth"
-                        git config --global user.email "nguyenminhnhanalvth@gmail.com"
-                        git add deployment.yaml
-                        git commit -m "Updated Deployment Manifest"
-                        git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/nhanalvth/gitops-complete-prodcution-e2e-pipeline-main.git main
-                    """
+                sh """
+                    git config --global user.name "nhanalvth"
+                    git config --global user.email "nguyenminhnhanalvth@gmail.com"
+                    git add deployment.yaml
+                    git commit -m "Updated Deployment Menifest"
+                """
+                //withCredentials([gitUsernamePassword{credentialsId: 'github', gitToolName: 'Default'}]) {
+                withCredentials([usernamePassword(credentialsId: 'github-token', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD')]){
+                    sh "git push https://github.com/nhanalvth/gitops-complete-prodcution-e2e-pipeline-main main"
                 }
             }
         }
