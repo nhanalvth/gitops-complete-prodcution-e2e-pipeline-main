@@ -15,7 +15,7 @@ pipeline {
 
         stage ("Checkout from SCM") {
             steps {
-                git branch: 'main', credentialsId: 'github-token', url: 'https://github.com/nhanalvth/gitops-complete-prodcution-e2e-pipeline-main'
+                git branch: 'master', credentialsId: 'github-token', url: 'https://github.com/nhanalvth/gitops-complete-prodcution-e2e-pipeline-main'
             }
         }
 
