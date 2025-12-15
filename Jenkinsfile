@@ -3,7 +3,7 @@ pipeline {
         label "jenkins-agent"
     }
     environment {
-        APP_NAME = "minhnhan548"
+        APP_NAME = "nhom18-projects"
     }
 
     stages {
