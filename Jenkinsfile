@@ -38,13 +38,17 @@ pipeline {
                     git add deployment.yaml
                     git commit -m "Updated Deployment Menifest"
                 """
-                withCredentials([gitUsernamePassword{credentialsId: 'github-token', gitToolName: 'Default'}]) {
+                //withCredentials([gitUsernamePassword{credentialsId: 'github-token', gitToolName: 'Default'}]) {
                 //withCredentials([usernamePassword(credentialsId: 'github-token', usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD')]){
-                    sh "git push https://github.com/nhanalvth/gitops-complete-prodcution-e2e-pipeline-main main"
-                }
+                //    sh "git push https://github.com/nhanalvth/gitops-complete-prodcution-e2e-pipeline-main main"
+                //}
                 //withCredentials([string(credentialsId: 'github-token', variable: 'GIT_TOKEN')]) {
                 //    sh "git push https://x-access-token:${GIT_TOKEN}@github.com/nhanalvth/gitops-complete-prodcution-e2e-pipeline-main main"
                 //}
+                withCredentials([string(credentialsId: 'github-token', variable: 'GIT_TOKEN')]) {
+                    sh "git push https://x-access-token:${GIT_TOKEN}@github.com/nhanalvth/gitops-complete-prodcution-e2e-pipeline-main main"
+                }
+
 
             }
         }
