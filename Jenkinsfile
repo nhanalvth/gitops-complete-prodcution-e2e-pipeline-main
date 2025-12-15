@@ -45,7 +45,7 @@ pipeline {
                 //withCredentials([string(credentialsId: 'github-token', variable: 'GIT_TOKEN')]) {
                 //    sh "git push https://x-access-token:${GIT_TOKEN}@github.com/nhanalvth/gitops-complete-prodcution-e2e-pipeline-main main"
                 //}
-                withCredentials([string(credentialsId: 'github-token', variable: 'GIT_TOKEN')]) {
+                withCredentials([string(credentialsId: 'github', variable: 'GIT_TOKEN')]) {
                     sh "git push https://x-access-token:${GIT_TOKEN}@github.com/nhanalvth/gitops-complete-prodcution-e2e-pipeline-main main"
                 }
 
