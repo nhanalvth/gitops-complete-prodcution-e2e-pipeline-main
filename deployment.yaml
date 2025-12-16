@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: complete-prodcution-e2e-app
-        image: nhom18-projects/nhom18-projects:latest
+        image: minhnhan548/minhnhan548:latest
         resources:
           requests:
             memory: "128Mi"   # Giảm yêu cầu bộ nhớ
